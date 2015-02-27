@@ -1,6 +1,6 @@
 {
   "name": "aurelia-skeleton-navigation",
-  "version": "0.10.0",
+  "version": "0.12.0",
   "description": "A starter kit for building a standard navigation-style app with Aurelia.",
   "keywords": [
     "aurelia",
@@ -48,6 +48,7 @@
   },
   "jspm": {
     "dependencies": {
+      "PMSI-AlignAlytics/dimple": "github:PMSI-AlignAlytics/dimple@^2.1.2",
       "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.9.1",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.4.1",
       "aurelia-framework": "github:aurelia/framework@^0.8.4",

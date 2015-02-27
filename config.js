@@ -9,6 +9,7 @@ System.config({
 
 System.config({
   "map": {
+    "PMSI-AlignAlytics/dimple": "github:PMSI-AlignAlytics/dimple@2.1.2",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
     "aurelia-framework": "github:aurelia/framework@0.8.6",

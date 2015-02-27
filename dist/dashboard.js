@@ -1,5 +1,5 @@
-System.register(["aurelia-http-client", "aurelia-framework", "d3", "mozilla/metrics-graphics"], function (_export) {
-  var HttpClient, LogManager, D3, Metrics, _prototypeProperties, _classCallCheck, url, logger, Dashboard;
+System.register(["aurelia-http-client", "aurelia-framework", "d3", "PMSI-AlignAlytics/dimple/dist/dimple.latest"], function (_export) {
+  var HttpClient, LogManager, D3, Dimple, _prototypeProperties, _classCallCheck, url, logger, Dashboard;
 
   return {
     setters: [function (_aureliaHttpClient) {
@@ -8,8 +8,8 @@ System.register(["aurelia-http-client", "aurelia-framework", "d3", "mozilla/metr
       LogManager = _aureliaFramework.LogManager;
     }, function (_d3) {
       D3 = _d3.D3;
-    }, function (_mozillaMetricsGraphics) {
-      Metrics = _mozillaMetricsGraphics.Metrics;
+    }, function (_PMSIAlignAlyticsDimpleDistDimpleLatest) {
+      Dimple = _PMSIAlignAlyticsDimpleDistDimpleLatest.Dimple;
     }],
     execute: function () {
       "use strict";
@@ -19,8 +19,10 @@ System.register(["aurelia-http-client", "aurelia-framework", "d3", "mozilla/metr
       _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
       // var url = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&tagmode=any&format=json';
-      // var url = 'http://hackfest.azurewebsites.net/api/oee';
-      url = "http://www.usa.gov/api/USAGovAPI/contacts.jsonp/contacts";
+      url = "http://hackfest.azurewebsites.net/api/oee";
+
+      // var url = 'http://www.usa.gov/api/USAGovAPI/contacts.jsonp/contacts';
+
       logger = LogManager.getLogger("dashboard");
       Dashboard = _export("Dashboard", (function () {
         function Dashboard(http) {
@@ -46,8 +48,8 @@ System.register(["aurelia-http-client", "aurelia-framework", "d3", "mozilla/metr
               var _this = this;
 
               logger.debug("Pulling data from " + url);
-              return this.http.jsonp(url, "callmemaybe").then(function (response) {
-                _this.payload = response.items;
+              return this.http.jsonp(url).then(function (response) {
+                _this.payload = response;
               });
             },
             writable: true,
@@ -68,4 +70,4 @@ System.register(["aurelia-http-client", "aurelia-framework", "d3", "mozilla/metr
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhc2hib2FyZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO01BQVEsVUFBVSxFQUNWLFVBQVUsRUFDVixFQUFFLEVBQ0YsT0FBTyx5Q0FLWCxHQUFHLEVBR0gsTUFBTSxFQUdHLFNBQVM7Ozs7QUFkZCxnQkFBVSxzQkFBVixVQUFVOztBQUNWLGdCQUFVLHFCQUFWLFVBQVU7O0FBQ1YsUUFBRSxPQUFGLEVBQUU7O0FBQ0YsYUFBTywyQkFBUCxPQUFPOzs7Ozs7Ozs7OztBQUtYLFNBQUcsR0FBRywwREFBMEQ7QUFHaEUsWUFBTSxHQUFHLFVBQVUsQ0FBQyxTQUFTLENBQUMsV0FBVyxDQUFDO0FBR2pDLGVBQVM7QUFFVCxpQkFGQSxTQUFTLENBRVIsSUFBSTtnQ0FGTCxTQUFTOztBQUdwQixnQkFBTSxDQUFDLEtBQUssQ0FBQyxvQkFBb0IsQ0FBQyxDQUFDO0FBQ2pDLGNBQUksQ0FBQyxPQUFPLEdBQUcsZUFBZSxDQUFDO0FBQy9CLGNBQUksQ0FBQyxPQUFPLEdBQUcsRUFBRSxDQUFDO0FBQ2xCLGNBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDO1NBQ2xCOzs2QkFQVSxTQUFTO0FBQ2IsZ0JBQU07bUJBQUEsa0JBQUc7QUFBRSxxQkFBTyxDQUFDLFVBQVUsQ0FBQyxDQUFDO2FBQUU7Ozs7O0FBUXhDLGtCQUFRO21CQUFBLG9CQUFFOzs7QUFDUixvQkFBTSxDQUFDLEtBQUssQ0FBQyxvQkFBb0IsR0FBRyxHQUFHLENBQUMsQ0FBQztBQUN6QyxxQkFBTyxJQUFJLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxHQUFHLEVBQUUsYUFBYSxDQUFDLENBQUMsSUFBSSxDQUFDLFVBQUEsUUFBUSxFQUFJO0FBQzFELHNCQUFLLE9BQU8sR0FBRyxRQUFRLENBQUMsS0FBSyxDQUFDO2VBQy9CLENBQUMsQ0FBQzthQUNKOzs7O0FBRUQsdUJBQWE7bUJBQUEseUJBQUU7QUFDYixvQkFBTSxDQUFDLEtBQUssQ0FBQyxjQUFjLENBQUMsQ0FBQztBQUM3QixxQkFBTyxPQUFPLENBQUMsaUNBQWlDLENBQUMsQ0FBQzthQUNuRDs7Ozs7O2VBbkJVLFNBQVMiLCJmaWxlIjoiZGFzaGJvYXJkLmpzIiwic291cmNlUm9vdCI6Ii9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhc2hib2FyZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO01BQVEsVUFBVSxFQUNWLFVBQVUsRUFDVixFQUFFLEVBQ0YsTUFBTSx5Q0FJVixHQUFHLEVBSUgsTUFBTSxFQUVHLFNBQVM7Ozs7QUFiZCxnQkFBVSxzQkFBVixVQUFVOztBQUNWLGdCQUFVLHFCQUFWLFVBQVU7O0FBQ1YsUUFBRSxPQUFGLEVBQUU7O0FBQ0YsWUFBTSwyQ0FBTixNQUFNOzs7Ozs7Ozs7O0FBSVYsU0FBRyxHQUFHLDJDQUEyQzs7OztBQUlqRCxZQUFNLEdBQUcsVUFBVSxDQUFDLFNBQVMsQ0FBQyxXQUFXLENBQUM7QUFFakMsZUFBUztBQUVULGlCQUZBLFNBQVMsQ0FFUixJQUFJO2dDQUZMLFNBQVM7O0FBR3BCLGdCQUFNLENBQUMsS0FBSyxDQUFDLG9CQUFvQixDQUFDLENBQUM7QUFDakMsY0FBSSxDQUFDLE9BQU8sR0FBRyxlQUFlLENBQUM7QUFDL0IsY0FBSSxDQUFDLE9BQU8sR0FBRyxFQUFFLENBQUM7QUFDbEIsY0FBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7U0FDbEI7OzZCQVBVLFNBQVM7QUFDYixnQkFBTTttQkFBQSxrQkFBRztBQUFFLHFCQUFPLENBQUMsVUFBVSxDQUFDLENBQUM7YUFBRTs7Ozs7QUFReEMsa0JBQVE7bUJBQUEsb0JBQUU7OztBQUNSLG9CQUFNLENBQUMsS0FBSyxDQUFDLG9CQUFvQixHQUFHLEdBQUcsQ0FBQyxDQUFDO0FBQ3pDLHFCQUFPLElBQUksQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxVQUFBLFFBQVEsRUFBSTtBQUMzQyxzQkFBSyxPQUFPLEdBQUcsUUFBUSxDQUFDO2VBQ3pCLENBQUMsQ0FBQzthQUNKOzs7O0FBRUQsdUJBQWE7bUJBQUEseUJBQUU7QUFDYixvQkFBTSxDQUFDLEtBQUssQ0FBQyxjQUFjLENBQUMsQ0FBQztBQUM3QixxQkFBTyxPQUFPLENBQUMsaUNBQWlDLENBQUMsQ0FBQzthQUNuRDs7Ozs7O2VBbkJVLFNBQVMiLCJmaWxlIjoiZGFzaGJvYXJkLmpzIiwic291cmNlUm9vdCI6Ii9zcmMvIn0=

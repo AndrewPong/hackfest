@@ -1,16 +1,15 @@
 import {HttpClient} from 'aurelia-http-client';
 import {LogManager} from 'aurelia-framework';
 import {D3} from 'd3'
-import {Metrics} from 'mozilla/metrics-graphics';
+import {Dimple} from 'PMSI-AlignAlytics/dimple/dist/dimple.latest';
 
 
 // var url = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&tagmode=any&format=json';
-// var url = 'http://hackfest.azurewebsites.net/api/oee';
-var url = 'http://www.usa.gov/api/USAGovAPI/contacts.jsonp/contacts';
+var url = 'http://hackfest.azurewebsites.net/api/oee';
+// var url = 'http://www.usa.gov/api/USAGovAPI/contacts.jsonp/contacts';
 
 
 var logger = LogManager.getLogger("dashboard");
-
 
 export class Dashboard{
   static inject() { return [HttpClient]; }
@@ -23,8 +22,8 @@ export class Dashboard{
 
   activate(){
     logger.debug('Pulling data from ' + url);
-    return this.http.jsonp(url, 'callmemaybe').then(response => {
-      this.payload = response.items;
+    return this.http.jsonp(url).then(response => {
+      this.payload = response;
     });
   }
 
