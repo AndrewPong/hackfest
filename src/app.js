@@ -9,7 +9,8 @@ export class App {
       config.title = 'DST Controls';
       config.options.pushState = true; // this is the daddy!
       config.map([
-        { route: ['','welcome'],  moduleId: 'welcome',      nav: true, title :'OEE Dashboard' },
+        { route: ['','welcome'],  moduleId: 'welcome',      nav: true, title :'Welcome' },
+        { route: 'dashboard',     moduleId: 'dashboard',      nav: true, title :'Dashboard' },
         { route: 'flickr',        moduleId: 'flickr',       nav: true, title :'Flickr' },
         { route: 'child-router',  moduleId: 'child-router', nav: true, title :'Child Router' }
       ]);

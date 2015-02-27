@@ -2,7 +2,7 @@ import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
 
 LogManager.addAppender(new ConsoleAppender());
-LogManager.setLevel(LogManager.levels.none);
+LogManager.setLevel(LogManager.levels.debug);
 // Log level options include: none, error, warn, info and debug
 // To create custom logging appenders: https://github.com/aurelia/logging-console/blob/master/src/index.js
 

@@ -15,6 +15,7 @@ System.config({
     "aurelia-http-client": "github:aurelia/http-client@0.5.3",
     "aurelia-router": "github:aurelia/router@0.5.5",
     "bootstrap": "github:twbs/bootstrap@3.3.2",
+    "d3": "npm:d3@3.5.5",
     "font-awesome": "npm:font-awesome@4.3.0",
     "petkaantonov/bluebird": "github:petkaantonov/bluebird@2.9.12",
     "github:aurelia/binding@0.3.4": {
@@ -50,10 +51,6 @@ System.config({
     },
     "github:aurelia/history-browser@0.2.3": {
       "aurelia-history": "github:aurelia/history@0.2.2",
-      "core-js": "npm:core-js@0.4.10"
-    },
-    "github:aurelia/http-client@0.5.0": {
-      "aurelia-path": "github:aurelia/path@0.4.3",
       "core-js": "npm:core-js@0.4.10"
     },
     "github:aurelia/http-client@0.5.3": {
