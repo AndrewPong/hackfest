@@ -1,6 +1,6 @@
 import {HttpClient} from 'aurelia-http-client';
 
-var url = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&tagmode=any&format=json';
+var url = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=iphone&tagmode=any&format=json';
 
 export class Flickr{
   static inject() { return [HttpClient]; }
